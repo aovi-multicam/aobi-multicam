@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ResolveNugetPackages>false</ResolveNugetPackages>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{FA5C0835-5BE8-3D5A-B3DF-F279BA6D2AE8}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>ALL_BUILD</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Storage\Repo\aobi\pyorbbecsdk-1.3.3\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/Storage/Repo/aobi/pyorbbecsdk-1.3.3/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"D:\Program Files\CMake\bin\cmake.exe" -SD:/Storage/Repo/aobi/pyorbbecsdk-1.3.3 -BD:/Storage/Repo/aobi/build --check-stamp-file D:/Storage/Repo/aobi/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Program Files\CMake\share\cmake-3.30\Modules\CMakeCInformation.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\CMakeCXXInformation.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\CMakeCheckCompilerFlagCommonPatterns.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\CMakeCommonLanguageInclude.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\CMakeGenericSystem.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\CMakeInitializeConfigs.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\CMakeLanguageInformation.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\CMakeRCInformation.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\CMakeSystemSpecificInformation.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\CMakeSystemSpecificInitialize.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\CheckCXXCompilerFlag.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\CheckCXXSourceCompiles.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\MSVC-C.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\MSVC-CXX.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\MSVC.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\FindPackageHandleStandardArgs.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\FindPackageMessage.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\FindPython\Support.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\FindPython3.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\Internal\CheckCompilerFlag.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\Internal\CheckFlagCommonConfig.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\Internal\CheckSourceCompiles.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\Platform\Windows-Initialize.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\Platform\Windows-MSVC-C.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\Platform\Windows-MSVC-CXX.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\Platform\Windows-MSVC.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\Platform\Windows.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\Platform\WindowsPaths.cmake;D:\ProgramData\Anaconda\envs\aobi_multicam\share\cmake\pybind11\pybind11Common.cmake;D:\ProgramData\Anaconda\envs\aobi_multicam\share\cmake\pybind11\pybind11Config.cmake;D:\ProgramData\Anaconda\envs\aobi_multicam\share\cmake\pybind11\pybind11ConfigVersion.cmake;D:\ProgramData\Anaconda\envs\aobi_multicam\share\cmake\pybind11\pybind11NewTools.cmake;D:\ProgramData\Anaconda\envs\aobi_multicam\share\cmake\pybind11\pybind11Targets.cmake;D:\Storage\Repo\aobi\build\CMakeFiles\3.30.0\CMakeCCompiler.cmake;D:\Storage\Repo\aobi\build\CMakeFiles\3.30.0\CMakeCXXCompiler.cmake;D:\Storage\Repo\aobi\build\CMakeFiles\3.30.0\CMakeRCCompiler.cmake;D:\Storage\Repo\aobi\build\CMakeFiles\3.30.0\CMakeSystem.cmake;D:\Storage\Repo\aobi\pyorbbecsdk-1.3.3\cmake\DetermineHostPlatform.cmake;D:\Storage\Repo\aobi\pyorbbecsdk-1.3.3\cmake\UninstallTarget.cmake;D:\Storage\Repo\aobi\pyorbbecsdk-1.3.3\cmake\cmake_uninstall.cmake.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Storage\Repo\aobi\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/Storage/Repo/aobi/pyorbbecsdk-1.3.3/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"D:\Program Files\CMake\bin\cmake.exe" -SD:/Storage/Repo/aobi/pyorbbecsdk-1.3.3 -BD:/Storage/Repo/aobi/build --check-stamp-file D:/Storage/Repo/aobi/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Program Files\CMake\share\cmake-3.30\Modules\CMakeCInformation.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\CMakeCXXInformation.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\CMakeCheckCompilerFlagCommonPatterns.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\CMakeCommonLanguageInclude.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\CMakeGenericSystem.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\CMakeInitializeConfigs.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\CMakeLanguageInformation.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\CMakeRCInformation.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\CMakeSystemSpecificInformation.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\CMakeSystemSpecificInitialize.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\CheckCXXCompilerFlag.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\CheckCXXSourceCompiles.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\MSVC-C.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\MSVC-CXX.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\MSVC.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\FindPackageHandleStandardArgs.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\FindPackageMessage.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\FindPython\Support.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\FindPython3.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\Internal\CheckCompilerFlag.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\Internal\CheckFlagCommonConfig.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\Internal\CheckSourceCompiles.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\Platform\Windows-Initialize.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\Platform\Windows-MSVC-C.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\Platform\Windows-MSVC-CXX.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\Platform\Windows-MSVC.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\Platform\Windows.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\Platform\WindowsPaths.cmake;D:\ProgramData\Anaconda\envs\aobi_multicam\share\cmake\pybind11\pybind11Common.cmake;D:\ProgramData\Anaconda\envs\aobi_multicam\share\cmake\pybind11\pybind11Config.cmake;D:\ProgramData\Anaconda\envs\aobi_multicam\share\cmake\pybind11\pybind11ConfigVersion.cmake;D:\ProgramData\Anaconda\envs\aobi_multicam\share\cmake\pybind11\pybind11NewTools.cmake;D:\ProgramData\Anaconda\envs\aobi_multicam\share\cmake\pybind11\pybind11Targets.cmake;D:\Storage\Repo\aobi\build\CMakeFiles\3.30.0\CMakeCCompiler.cmake;D:\Storage\Repo\aobi\build\CMakeFiles\3.30.0\CMakeCXXCompiler.cmake;D:\Storage\Repo\aobi\build\CMakeFiles\3.30.0\CMakeRCCompiler.cmake;D:\Storage\Repo\aobi\build\CMakeFiles\3.30.0\CMakeSystem.cmake;D:\Storage\Repo\aobi\pyorbbecsdk-1.3.3\cmake\DetermineHostPlatform.cmake;D:\Storage\Repo\aobi\pyorbbecsdk-1.3.3\cmake\UninstallTarget.cmake;D:\Storage\Repo\aobi\pyorbbecsdk-1.3.3\cmake\cmake_uninstall.cmake.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Storage\Repo\aobi\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/Storage/Repo/aobi/pyorbbecsdk-1.3.3/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"D:\Program Files\CMake\bin\cmake.exe" -SD:/Storage/Repo/aobi/pyorbbecsdk-1.3.3 -BD:/Storage/Repo/aobi/build --check-stamp-file D:/Storage/Repo/aobi/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Program Files\CMake\share\cmake-3.30\Modules\CMakeCInformation.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\CMakeCXXInformation.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\CMakeCheckCompilerFlagCommonPatterns.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\CMakeCommonLanguageInclude.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\CMakeGenericSystem.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\CMakeInitializeConfigs.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\CMakeLanguageInformation.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\CMakeRCInformation.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\CMakeSystemSpecificInformation.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\CMakeSystemSpecificInitialize.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\CheckCXXCompilerFlag.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\CheckCXXSourceCompiles.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\MSVC-C.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\MSVC-CXX.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\MSVC.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\FindPackageHandleStandardArgs.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\FindPackageMessage.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\FindPython\Support.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\FindPython3.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\Internal\CheckCompilerFlag.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\Internal\CheckFlagCommonConfig.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\Internal\CheckSourceCompiles.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\Platform\Windows-Initialize.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\Platform\Windows-MSVC-C.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\Platform\Windows-MSVC-CXX.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\Platform\Windows-MSVC.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\Platform\Windows.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\Platform\WindowsPaths.cmake;D:\ProgramData\Anaconda\envs\aobi_multicam\share\cmake\pybind11\pybind11Common.cmake;D:\ProgramData\Anaconda\envs\aobi_multicam\share\cmake\pybind11\pybind11Config.cmake;D:\ProgramData\Anaconda\envs\aobi_multicam\share\cmake\pybind11\pybind11ConfigVersion.cmake;D:\ProgramData\Anaconda\envs\aobi_multicam\share\cmake\pybind11\pybind11NewTools.cmake;D:\ProgramData\Anaconda\envs\aobi_multicam\share\cmake\pybind11\pybind11Targets.cmake;D:\Storage\Repo\aobi\build\CMakeFiles\3.30.0\CMakeCCompiler.cmake;D:\Storage\Repo\aobi\build\CMakeFiles\3.30.0\CMakeCXXCompiler.cmake;D:\Storage\Repo\aobi\build\CMakeFiles\3.30.0\CMakeRCCompiler.cmake;D:\Storage\Repo\aobi\build\CMakeFiles\3.30.0\CMakeSystem.cmake;D:\Storage\Repo\aobi\pyorbbecsdk-1.3.3\cmake\DetermineHostPlatform.cmake;D:\Storage\Repo\aobi\pyorbbecsdk-1.3.3\cmake\UninstallTarget.cmake;D:\Storage\Repo\aobi\pyorbbecsdk-1.3.3\cmake\cmake_uninstall.cmake.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Storage\Repo\aobi\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/Storage/Repo/aobi/pyorbbecsdk-1.3.3/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"D:\Program Files\CMake\bin\cmake.exe" -SD:/Storage/Repo/aobi/pyorbbecsdk-1.3.3 -BD:/Storage/Repo/aobi/build --check-stamp-file D:/Storage/Repo/aobi/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Program Files\CMake\share\cmake-3.30\Modules\CMakeCInformation.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\CMakeCXXInformation.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\CMakeCheckCompilerFlagCommonPatterns.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\CMakeCommonLanguageInclude.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\CMakeGenericSystem.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\CMakeInitializeConfigs.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\CMakeLanguageInformation.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\CMakeRCInformation.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\CMakeSystemSpecificInformation.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\CMakeSystemSpecificInitialize.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\CheckCXXCompilerFlag.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\CheckCXXSourceCompiles.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\MSVC-C.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\MSVC-CXX.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\MSVC.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\FindPackageHandleStandardArgs.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\FindPackageMessage.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\FindPython\Support.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\FindPython3.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\Internal\CheckCompilerFlag.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\Internal\CheckFlagCommonConfig.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\Internal\CheckSourceCompiles.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\Platform\Windows-Initialize.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\Platform\Windows-MSVC-C.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\Platform\Windows-MSVC-CXX.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\Platform\Windows-MSVC.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\Platform\Windows.cmake;D:\Program Files\CMake\share\cmake-3.30\Modules\Platform\WindowsPaths.cmake;D:\ProgramData\Anaconda\envs\aobi_multicam\share\cmake\pybind11\pybind11Common.cmake;D:\ProgramData\Anaconda\envs\aobi_multicam\share\cmake\pybind11\pybind11Config.cmake;D:\ProgramData\Anaconda\envs\aobi_multicam\share\cmake\pybind11\pybind11ConfigVersion.cmake;D:\ProgramData\Anaconda\envs\aobi_multicam\share\cmake\pybind11\pybind11NewTools.cmake;D:\ProgramData\Anaconda\envs\aobi_multicam\share\cmake\pybind11\pybind11Targets.cmake;D:\Storage\Repo\aobi\build\CMakeFiles\3.30.0\CMakeCCompiler.cmake;D:\Storage\Repo\aobi\build\CMakeFiles\3.30.0\CMakeCXXCompiler.cmake;D:\Storage\Repo\aobi\build\CMakeFiles\3.30.0\CMakeRCCompiler.cmake;D:\Storage\Repo\aobi\build\CMakeFiles\3.30.0\CMakeSystem.cmake;D:\Storage\Repo\aobi\pyorbbecsdk-1.3.3\cmake\DetermineHostPlatform.cmake;D:\Storage\Repo\aobi\pyorbbecsdk-1.3.3\cmake\UninstallTarget.cmake;D:\Storage\Repo\aobi\pyorbbecsdk-1.3.3\cmake\cmake_uninstall.cmake.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Storage\Repo\aobi\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="D:\Storage\Repo\aobi\build\ZERO_CHECK.vcxproj">
+      <Project>{CD07B5B7-B7A5-360C-AFF6-834675257F7A}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Storage\Repo\aobi\build\pyorbbecsdk.vcxproj">
+      <Project>{BFA34B3E-6598-34F4-BC9E-30DB3DBF4197}</Project>
+      <Name>pyorbbecsdk</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

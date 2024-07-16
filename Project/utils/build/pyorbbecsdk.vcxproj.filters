@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\Storage\Repo\aobi\pyorbbecsdk-1.3.3\src\pyorbbecsdk\pyorbbecsdk.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Storage\Repo\aobi\pyorbbecsdk-1.3.3\src\pyorbbecsdk\context.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Storage\Repo\aobi\pyorbbecsdk-1.3.3\src\pyorbbecsdk\device.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Storage\Repo\aobi\pyorbbecsdk-1.3.3\src\pyorbbecsdk\error.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Storage\Repo\aobi\pyorbbecsdk-1.3.3\src\pyorbbecsdk\filter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Storage\Repo\aobi\pyorbbecsdk-1.3.3\src\pyorbbecsdk\frame.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Storage\Repo\aobi\pyorbbecsdk-1.3.3\src\pyorbbecsdk\pipeline.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Storage\Repo\aobi\pyorbbecsdk-1.3.3\src\pyorbbecsdk\properties.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Storage\Repo\aobi\pyorbbecsdk-1.3.3\src\pyorbbecsdk\record_playback.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Storage\Repo\aobi\pyorbbecsdk-1.3.3\src\pyorbbecsdk\sensor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Storage\Repo\aobi\pyorbbecsdk-1.3.3\src\pyorbbecsdk\stream_profile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Storage\Repo\aobi\pyorbbecsdk-1.3.3\src\pyorbbecsdk\types.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Storage\Repo\aobi\pyorbbecsdk-1.3.3\src\pyorbbecsdk\utils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Storage\Repo\aobi\pyorbbecsdk-1.3.3\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{94F36B77-7373-3160-A36A-5448DC645D4B}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

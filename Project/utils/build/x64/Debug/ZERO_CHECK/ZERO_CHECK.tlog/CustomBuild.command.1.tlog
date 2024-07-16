@@ -1,0 +1,10 @@
+^D:\STORAGE\REPO\AOBI\BUILD\CMAKEFILES\E1E004A39FF8F43F589112C461A2788F\GENERATE.STAMP.RULE
+setlocal
+"D:\Program Files\CMake\bin\cmake.exe" -SD:/Storage/Repo/aobi/pyorbbecsdk-1.3.3 -BD:/Storage/Repo/aobi/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file D:/Storage/Repo/aobi/build/pyorbbecsdk.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
