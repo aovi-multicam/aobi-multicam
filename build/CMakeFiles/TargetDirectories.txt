@@ -1,0 +1,6 @@
+E:/Project/SZUer-explode-XiAn/aobi-multicam/build/CMakeFiles/pyorbbecsdk.dir
+E:/Project/SZUer-explode-XiAn/aobi-multicam/build/CMakeFiles/uninstall.dir
+E:/Project/SZUer-explode-XiAn/aobi-multicam/build/CMakeFiles/RUN_TESTS.dir
+E:/Project/SZUer-explode-XiAn/aobi-multicam/build/CMakeFiles/INSTALL.dir
+E:/Project/SZUer-explode-XiAn/aobi-multicam/build/CMakeFiles/ALL_BUILD.dir
+E:/Project/SZUer-explode-XiAn/aobi-multicam/build/CMakeFiles/ZERO_CHECK.dir
