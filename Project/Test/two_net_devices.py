@@ -115,8 +115,8 @@ def stop_streams(pipelines: List[Pipeline]):
 
 def main():
     ctx = Context()
-    device_0 = ctx.create_net_device(192.168.1.10, 8090)
-    device_1 = ctx.create_net_device(192.168.1.11, 8090)
+    device_0 = ctx.create_net_device("192.168.1.10", 8090)
+    device_1 = ctx.create_net_device("192.168.1.11", 8090)
 
 
     device_list = [device_0, device_1]
