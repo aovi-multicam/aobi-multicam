@@ -22,28 +22,30 @@ import numpy as np
 from pyorbbecsdk import *
 from utils import frame_to_bgr_image
 
-MAX_DEVICES = 2
-curr_device_cnt = 2 
+MAX_DEVICES = 2 # 最大设备数
+curr_device_cnt = 2  # 目前设备数
 
-MAX_QUEUE_SIZE = 5
-ESC_KEY = 27
-
+MAX_QUEUE_SIZE = 5 # 最大帧队列数
+ESC_KEY = 27 # 退出按键ascii码
+ 
+# 为每个设备创建一个队列对象
 color_frames_queue: List[Queue] = [Queue() for _ in range(MAX_DEVICES)]
 depth_frames_queue: List[Queue] = [Queue() for _ in range(MAX_DEVICES)]
 has_color_sensor: List[bool] = [False for _ in range(MAX_DEVICES)]
 stop_rendering = False
 
-
+# 获取新帧的回调函数
 def on_new_frame_callback(frames: FrameSet, index: int):
     global color_frames_queue, depth_frames_queue
     global MAX_QUEUE_SIZE
     assert index < MAX_DEVICES
-    color_frame = frames.get_color_frame()
-    depth_frame = frames.get_depth_frame()
+    color_frame = frames.get_color_frame() # 获取RGB帧
+    depth_frame = frames.get_depth_frame() # 获取深度帧
     if color_frame is not None:
+        # 如果队列中的帧数大于最大队列大小，则从队列中删除帧
         if color_frames_queue[index].qsize() >= MAX_QUEUE_SIZE:
-            color_frames_queue[index].get()
-        color_frames_queue[index].put(color_frame)
+            color_frames_queue[index].get() 
+        color_frames_queue[index].put(color_frame) # 将RGB帧放入队列
     if depth_frame is not None:
         if depth_frames_queue[index].qsize() >= MAX_QUEUE_SIZE:
             depth_frames_queue[index].get()
@@ -73,6 +75,8 @@ def rendering_frames():
             depth_image = None # 深度图像初始化
             color_width, color_height = 0, 0 # RGB宽高初始化
             if color_frame is not None: # 如果RGB帧不为空 获取RGB帧的宽高和图像 
+
+                # RGB数据处理
                 color_width, color_height = color_frame.get_width(), color_frame.get_height() # 获取RGB帧的宽高
                 color_image = frame_to_bgr_image(color_frame) # 将RGB帧转换为BGR图像
             if depth_frame is not None: # 如果深度帧不为空
@@ -80,49 +84,54 @@ def rendering_frames():
                 height = depth_frame.get_height() # 获取深度帧的高
                 scale = depth_frame.get_depth_scale() # 获取深度帧的深度比例
 
-                # 深度数据
+                # 深度数据处理
                 # 从深度帧中获取深度数据    
                 depth_data = np.frombuffer(depth_frame.get_data(), dtype=np.uint16)
-                # 
+                # 将深度数据转换成长宽为 height 和 width 的数组
                 depth_data = depth_data.reshape((height, width))
-
+                # 将深度数据转换成浮点数并乘以深度比例
                 depth_data = depth_data.astype(np.float32) * scale
-
+                # 将深度数据转换成 8 位无符号整数 归一化到0-255
                 depth_image = cv2.normalize(depth_data, None, 0, 255, cv2.NORM_MINMAX,
                                             dtype=cv2.CV_8U)
+                # 将深度图像转换成伪彩色图像
                 depth_image = cv2.applyColorMap(depth_image, cv2.COLORMAP_JET)
 
-            if color_image is not None and depth_image is not None:
-                window_size = (color_width // 2, color_height // 2)
-                color_image = cv2.resize(color_image, window_size)
-                depth_image = cv2.resize(depth_image, window_size)
-                image = np.hstack((color_image, depth_image))
-            elif depth_image is not None and not has_color_sensor[i]:
+            if color_image is not None and depth_image is not None: 
+                # 图像最终处理
+                window_size = (color_width // 2, color_height // 2) 
+                color_image = cv2.resize(color_image, window_size) 
+                depth_image = cv2.resize(depth_image, window_size) 
+                image = np.hstack((color_image, depth_image)) # 水平拼接RGB和深度图像
+            elif depth_image is not None and not has_color_sensor[i]: 
                 image = depth_image
             else:
                 continue
-            cv2.imshow("Device {}".format(i), image)
+            cv2.imshow("Device {}".format(i), image) # 显示图像
             key = cv2.waitKey(1)
-            if key == ord('q') or key == ESC_KEY:
+            if key == ord('q') or key == ESC_KEY: 
                 return
 
-
+# 全部设备开启数据流
 def start_streams(pipelines: List[Pipeline], configs: List[Config]):
     index = 0
-    for pipeline, config in zip(pipelines, configs):
+    for pipeline, config in zip(pipelines, configs): # 遍历pipelines和configs列表中的元素
         print("Starting device {}".format(index))
         pipeline.start(config, lambda frame_set, curr_index=index: on_new_frame_callback(frame_set,
-                                                                                         curr_index))
+                                                                                         curr_index)) 
+        # config是当前迭代的配置对象，而回调函数是当新的帧数据到达时将被调用的函数
+        # curr_index=index 用于将当前设备的索引传递给回调函数
+        # 当新的帧数据到达时，回调函数将被调用，并且将当前设备的索引作为参数传递给回调函数
         index += 1
 
-
+# 全部设备停止数据流
 def stop_streams(pipelines: List[Pipeline]):
     for pipeline in pipelines:
         pipeline.stop()
 
 
 def main():
-    ctx = Context()
+    ctx = Context() # Context对象
     device_0 = ctx.create_net_device("192.168.1.12", 8090)
     device_1 = ctx.create_net_device("192.168.1.16", 8090)
     #device_2 = ctx.create_net_device(192.168.1.12, 8090)
