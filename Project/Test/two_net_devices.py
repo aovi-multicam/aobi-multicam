@@ -117,9 +117,9 @@ def main():
     ctx = Context()
     device_0 = ctx.create_net_device(192.168.1.10, 8090)
     device_1 = ctx.create_net_device(192.168.1.11, 8090)
-    device_2 = ctx.create_net_device(192.168.1.12, 8090)
 
-    device_list = [device_0, device_1, device_2]
+
+    device_list = [device_0, device_1]
     global curr_device_cnt
     #curr_device_cnt = device_list.get_count()
     if curr_device_cnt == 0:
