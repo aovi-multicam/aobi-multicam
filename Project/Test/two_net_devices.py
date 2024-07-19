@@ -23,7 +23,7 @@ from pyorbbecsdk import *
 from utils import frame_to_bgr_image
 
 MAX_DEVICES = 2
-curr_device_cnt = 8
+curr_device_cnt = 2
 
 MAX_QUEUE_SIZE = 5
 ESC_KEY = 27
@@ -115,9 +115,9 @@ def stop_streams(pipelines: List[Pipeline]):
 
 def main():
     ctx = Context()
-    device_0 = ctx.create_net_device("192.168.1.10", 8090)
-    device_1 = ctx.create_net_device("192.168.1.11", 8090)
-
+    device_0 = ctx.create_net_device("192.168.1.12", 8090)
+    device_1 = ctx.create_net_device("192.168.1.16", 8090)
+    #device_2 = ctx.create_net_device(192.168.1.12, 8090)
 
     device_list = [device_0, device_1]
     global curr_device_cnt
@@ -132,8 +132,8 @@ def main():
     configs: List[Config] = []
     global has_color_sensor
     i = 0
-    for device in range(device_list):
-        device = device_list.get_device_by_index(i)
+    for device in device_list:
+        
         pipeline = Pipeline(device)
         config = Config()
         try:
