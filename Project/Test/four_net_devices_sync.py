@@ -121,7 +121,7 @@ def rendering_frames():
                 window_size = (color_width // 2 //2 , color_height // 2 //2)
                 color_image = cv2.resize(color_image, window_size)
                 depth_image = cv2.resize(depth_image, window_size)
-                image = np.hstack((color_image, depth_image))
+                image = np.vstack((color_image, depth_image))
             elif depth_image is not None and not has_color_sensor[i]:
                 image = depth_image
             else:
@@ -189,10 +189,16 @@ def main():
         serial_number = device.get_device_info().get_serial_number()
         sync_config_json = multi_device_sync_config[serial_number]
         sync_config = device.get_multi_device_sync_config()
+        print(sync_config_json["config"]["mode"])
         sync_config.mode = sync_mode_from_str(sync_config_json["config"]["mode"])
         sync_config.color_delay_us = sync_config_json["config"]["color_delay_us"]
         sync_config.depth_delay_us = sync_config_json["config"]["depth_delay_us"]
         sync_config.trigger_out_enable = sync_config_json["config"]["trigger_out_enable"]
+        sync_config.trigger_to_image_delay_us = sync_config_json["config"]["trigger_to_image_delay_us"]
+        
+        print(sync_config_json["config"]["trigger_to_image_delay_us"])
+        import time
+        time.sleep(10)
         sync_config.trigger_out_delay_us = sync_config_json["config"]["trigger_out_delay_us"]
         sync_config.frames_per_trigger = sync_config_json["config"]["frames_per_trigger"]
         print(f"Device {serial_number} sync config: {sync_config}")
