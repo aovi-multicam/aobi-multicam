@@ -195,6 +195,7 @@ def main():
         sync_config.frames_per_trigger = sync_config_json["config"]["frames_per_trigger"]
         print(f"Device {serial_number} sync config: {sync_config}")
         device.set_multi_device_sync_config(sync_config)
+
         try:
             profile_list = pipeline.get_stream_profile_list(OBSensorType.COLOR_SENSOR)
             color_profile: VideoStreamProfile = (
