@@ -24,8 +24,8 @@ import numpy as np
 from pyorbbecsdk import *
 from utils import frame_to_bgr_image
 
-MAX_DEVICES = 4
-curr_device_cnt = 4
+MAX_DEVICES = 7
+curr_device_cnt = 7
 
 MAX_QUEUE_SIZE = 5
 ESC_KEY = 27
@@ -118,7 +118,7 @@ def rendering_frames():
                 depth_image = cv2.applyColorMap(depth_image, cv2.COLORMAP_JET)
 
             if color_image is not None and depth_image is not None:
-                window_size = (color_width // 2 //2 , color_height // 2 //2)
+                window_size = (color_width // 2 //3 , color_height // 2 //3 )
                 color_image = cv2.resize(color_image, window_size)
                 depth_image = cv2.resize(depth_image, window_size)
                 image = np.vstack((color_image, depth_image))
@@ -165,11 +165,15 @@ def main():
 
     read_config(config_file_path)
     ctx = Context()
-    device_0 = ctx.create_net_device("192.168.1.12", 8090)
-    device_1 = ctx.create_net_device("192.168.1.11", 8090)
-    device_2 = ctx.create_net_device("192.168.1.10", 8090)
-    device_3 = ctx.create_net_device("192.168.1.15", 8090)
-    device_list = [device_0, device_1,device_2,device_3]
+    device_0 = ctx.create_net_device("192.168.1.11", 8090)
+    device_1 = ctx.create_net_device("192.168.1.16", 8090)
+    device_2 = ctx.create_net_device("192.168.1.12", 8090)
+    device_3 = ctx.create_net_device("192.168.1.17", 8090)
+    device_4 = ctx.create_net_device("192.168.1.13", 8090)
+    device_5 = ctx.create_net_device("192.168.1.15", 8090)
+    device_6 = ctx.create_net_device("192.168.1.10", 8090)
+
+    device_list = [device_0, device_1,device_2,device_3,device_4,device_5,device_6]
 
     #curr_device_cnt = device_list.get_count()
     if curr_device_cnt == 0:
@@ -197,8 +201,6 @@ def main():
         sync_config.trigger_to_image_delay_us = sync_config_json["config"]["trigger_to_image_delay_us"]
         
         print(sync_config_json["config"]["trigger_to_image_delay_us"])
-        import time
-        time.sleep(10)
         sync_config.trigger_out_delay_us = sync_config_json["config"]["trigger_out_delay_us"]
         sync_config.frames_per_trigger = sync_config_json["config"]["frames_per_trigger"]
         print(f"Device {serial_number} sync config: {sync_config}")

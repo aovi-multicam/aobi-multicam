@@ -1,7 +1,9 @@
 {
-    "devices": [
+    "version":"1.2.7",
+    "config":"2023.12.31",
+    "devices" : [
         {
-            "serial_number": "CL3N2410049",
+            "serial_number": "CL3N241004F",
             "config": {
                 "mode": "PRIMARY",
                 "depth_delay_us": 0,
@@ -14,29 +16,55 @@
             }
         },
         {
-            "serial_number": "CL3N241004F",
+            "serial_number": "CL3N241004A",
             "config": {
                 "mode": "SECONDARY",
                 "depth_delay_us": 0,
                 "color_delay_us": 0,
-                "trigger_to_image_delay_us": 1000000,
+                "trigger_to_image_delay_us": 160,
                 "trigger_out_enable": true,
-                "trigger_out_delay_us": 1000000,
+                "trigger_out_delay_us": 0,
                 "frames_per_trigger": 1,
                 "deviceID":1
             }
         },
         {
-            "serial_number": "CL3N2410056",
+            "serial_number": "CL3N2410049",
             "config": {
                 "mode": "SECONDARY",
                 "depth_delay_us": 0,
                 "color_delay_us": 0,
-                "trigger_to_image_delay_us": 2000000,
+                "trigger_to_image_delay_us": 320,
                 "trigger_out_enable": true,
-                "trigger_out_delay_us": 2000000,
+                "trigger_out_delay_us": 0,
                 "frames_per_trigger": 1,
                 "deviceID":2
+            }
+        },
+        {
+            "serial_number": "CL2LC2P0002",
+            "config": {
+                "mode": "SECONDARY",
+                "depth_delay_us": 0,
+                "color_delay_us": 0,
+                "trigger_to_image_delay_us": 480,
+                "trigger_out_enable": true,
+                "trigger_out_delay_us": 0,
+                "frames_per_trigger": 1,
+                "deviceID":3
+            }
+        },
+        {
+            "serial_number": "CL3N241006B",
+            "config": {
+                "mode": "SECONDARY",
+                "depth_delay_us": 0,
+                "color_delay_us": 0,
+                "trigger_to_image_delay_us": 640,
+                "trigger_out_enable": true,
+                "trigger_out_delay_us": 0,
+                "frames_per_trigger": 1,
+                "deviceID":4
             }
         },
         {
@@ -45,11 +73,24 @@
                 "mode": "SECONDARY",
                 "depth_delay_us": 0,
                 "color_delay_us": 0,
-                "trigger_to_image_delay_us": 3000000,
+                "trigger_to_image_delay_us": 700,
                 "trigger_out_enable": true,
-                "trigger_out_delay_us": 3000000,
+                "trigger_out_delay_us": 0,
                 "frames_per_trigger": 1,
-                "deviceID":3
+                "deviceID":5
+            }
+        },
+        {
+            "serial_number": "CL3N2410056",
+            "config": {
+                "mode": "SECONDARY",
+                "depth_delay_us": 0,
+                "color_delay_us": 0,
+                "trigger_to_image_delay_us": 860,
+                "trigger_out_enable": true,
+                "trigger_out_delay_us": 0,
+                "frames_per_trigger": 1,
+                "deviceID":6
             }
         }
     ]
