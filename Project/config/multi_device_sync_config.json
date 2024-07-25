@@ -3,7 +3,7 @@
     "config":"2023.12.31",
     "devices" : [
         {
-            "serial_number": "CL3N241004F",
+            "serial_number": "CL3N2410049",
             "config": {
                 "mode": "PRIMARY",
                 "depth_delay_us": 0,
@@ -29,7 +29,7 @@
             }
         },
         {
-            "serial_number": "CL3N2410049",
+            "serial_number": "CL3N241004F",
             "config": {
                 "mode": "SECONDARY",
                 "depth_delay_us": 0,
@@ -91,6 +91,19 @@
                 "trigger_out_delay_us": 0,
                 "frames_per_trigger": 1,
                 "deviceID":6
+            }
+        },
+        {
+            "serial_number": "CL2LC2P00EQ",
+            "config": {
+                "mode": "SECONDARY",
+                "depth_delay_us": 0,
+                "color_delay_us": 0,
+                "trigger_to_image_delay_us": 1020,
+                "trigger_out_enable": true,
+                "trigger_out_delay_us": 0,
+                "frames_per_trigger": 1,
+                "deviceID":7
             }
         }
     ]
