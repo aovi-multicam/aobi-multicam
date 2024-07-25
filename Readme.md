@@ -33,13 +33,14 @@
 但是，如果在新 PC 上使用摄像机而未在此 PC 上更新其固件，则请在这台 PC 上使用每个摄像机与 Orbbec Viewer 一次，以完成此设置步骤，然后再将它们与 ScannedReality Studio 一起使用。
 
 ## 配置环境
-本节将介绍
+本节将介绍相机使用所需环境：
 
 ### 所需软件
 * **Anaconda** ：https://www.anaconda.com/
 * **Vscode** : https://code.visualstudio.com/
 * **pyorbbecSDK** : https://github.com/orbbec/pyorbbecsdk
 * **Cmake** : https://cmake.org/download/
+* **Matlab** ：https://www.mathworks.com/
 
 ### 配置步骤
 1. 获取Python 3.11：
@@ -81,13 +82,17 @@ Anaconda可以创建虚拟环境达成。打开anaconda prompt，输入命令​
 2. 开流成功后预览多机效果图如下：
 
 ## 相机标定
-本节将介绍张友正标定法对相机外参进行标定：
+本节将介绍张友正标定法对相机外参,与 Matlab 工具箱对相机内外参进行标定：
+### 张友正标定法
 1. 对单相机进行标定，得到两个相机的外参。
 2. 对两组外参通过世界坐标系转换，从而将两个相机的像素坐标行进行转换，最终得到两个相机之间的坐标系转换。
-由于本方案中使用的相机均为Femto Mega，因此方案中将相机内参近似相同。
+由于本方案中使用的相机均为 Femto Mega ，因此方案中将相机内参近似相同。
+### Matlab Computer vision toolbox
+1. 在 Matlab中下载 Computer vision toolbox。
+2. 采集相机照片：双机采集一组照片，过程中需注意保持相机与标定板不动，且尽量让标定板以不同的姿态铺满 RGB 照片，姿态尽量丰富。
+3. 使用 Stereo camera calibrator 进行标定。
+4. 可以在优化选项中输入相机初始内参，使用 Orbbec viewer 可以查看内参，运行后再在命令行中可打印内外参。
 ## 点云图拼接
-
-##
 
 ## 遇到问题
 本节将介绍在Femto Mega多相机同步采集中所遇到的问题：
