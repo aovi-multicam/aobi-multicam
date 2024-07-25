@@ -18,7 +18,8 @@
 * **相机标定**
 * **点云图拼接**
 
-文档页面最后总结了目前方案仍面临的问题：
+文档页面最后解答了部分故障排除及总结了目前方案仍面临的问题：
+* **故障排除**
 * **遇到问题**
 
 ## 零件清单
@@ -68,14 +69,14 @@ Anaconda可以创建虚拟环境达成。打开anaconda prompt，输入命令​
 5. 重新编译整个pyorbbecSDK
 如果遇到下列情况一般是 Pybind11 的位置没有找到，在 CmakeList.txt 中加入即可[tupian]
 在下图文件夹中用 Vscode 打开 pyorbbecsdk.sln[tupian]，点击INSTALL，生成[tupian]，将在 install/lib/ 中生成四个库文件
-6. 将install文件夹的动态库加入工程目录（也可尝试放入examples文件夹中），接入 OrbbecSDK 的深度相机运行depth_viewer.py ，结果如下图，即可认为环境配置成功。
+6. 将install文件夹的动态库加入工程目录（也可尝试放入examples文件夹中），接入 OrbbecSDK 的深度相机运行 depth_viewer.py ，结果如下图，即可认为环境配置成功。
 图片[de]（effect） 
 
 ## FemtoMega组网
 本节将介绍FemtoMega组网过程，步骤如下：
 
 1. 确认采集电脑是否处于同一以太网内。若不是，需对采集电脑进行手动IP设置。
-2. 连接FemtoMega：将FemtoMega网线接到有POE的设备上，通过网线供电和传输数据。
+2. 连接 Femto Mega ：将 Femto Mega 网线接到有POE的设备上，通过网线供电和传输数据。
 3. 检查是否连接成功：打开**最新版OrbeecViewer**，若出现如下信息时，即为连接成功。
 4. 更改相机IP：在OrbbecViewer——相机控制——IP配置中，对Mega的网络IP进行手动控制。
 
@@ -108,6 +109,25 @@ Anaconda可以创建虚拟环境达成。打开anaconda prompt，输入命令​
 3. 使用 Stereo camera calibrator 进行标定。
 4. 可以在优化选项中输入相机初始内参，使用 Orbbec viewer 可以查看内参，运行后再在命令行中可打印内外参。
 ## 点云图拼接
+
+## 故障排除
+**Q:** Cmake K4A_SDK 报错，显示缺少库文件
+**A:** 需要将源码 gitclone 后进行 gitmodule ，检查缺少的库文件并进行添加
+
+**Q:** 电脑已开代理，但 gitmododule 过程中一直处于报错状态 failed
+**A:** 命令行需要单独开代理```set http_proxy=http://127.0.0.1:7890 & set https_proxy=http://127.0.0.1:7890```，命令行可参考以上命令进行设置，其中7890为采集电脑的代理端口号
+
+**Q:** 当使用 viewer 开启视频时设备闪烁黄灯且无法打开视频
+**A:** 同步时该设备被设置为从机，在 viewer 中修改为主机即可正常使用
+
+**Q:**
+**A:**
+
+**Q:**
+**A:**
+
+**Q:**
+**A:**
 
 ## 遇到问题
 本节将介绍在Femto Mega多相机同步采集中所遇到的问题：
