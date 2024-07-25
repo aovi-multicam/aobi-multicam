@@ -36,9 +36,9 @@
 |千兆网线||2条|交换机和采集主机的连线|
 
 ## 方案框图
-
+![connectiondiagram](\picture\connectiondiagram.png)
 ## 首次设置
-本节将介绍使用FemtoMega相机的首次设置
+本节将介绍使用FemtoMega相机的首次设置：
 
 ### 更新固件
 本方案中，需确保所使用相机固件均已更新到最新版本。阅读[Orbbec说明](https://www.orbbec.com/products/)，可对FemtoMega设备上固件进行更新。
@@ -118,19 +118,25 @@ Anaconda可以创建虚拟环境达成。打开anaconda prompt，输入命令​
 **A:** 命令行需要单独开代理```set http_proxy=http://127.0.0.1:7890 & set https_proxy=http://127.0.0.1:7890```，命令行可参考以上命令进行设置，其中7890为采集电脑的代理端口号
 
 **Q:** 当使用 viewer 开启视频时设备闪烁黄灯且无法打开视频
+![Wrongcondition](\picture\QandA\Q1.png)
 **A:** 同步时该设备被设置为从机，在 viewer 中修改为主机即可正常使用
 
-**Q:**
-**A:**
+**Q:** 运行 K4A_SDK 中的 green_screen 的双机模式时报错没有同步
+![multimodenotsync](\picture\QandA\Q2.png)
+**A:** 在 viewer 中设置主从机即可
 
-**Q:**
-**A:**
+**Q:** 程序报错，显示缺少 DDL 文件
+![lackofddl](\picture\QandA\Q3.png)
+**A:** 可在文件编辑器中搜索相关文件并添加到目录中即可
 
-**Q:**
-**A:**
+**Q:** viewer 可以检测到网络连接的设备，但点击链接后无法链接
+**A:** 需要手动设置电脑IP
+
+**Q:** 手动配置网络后出现连接失败
+**A:** 在同一网络中，多台电脑设置了同一 IP
 
 ## 遇到问题
 本节将介绍在Femto Mega多相机同步采集中所遇到的问题：
 ### 多台设备网线连接存在掉帧
 由于网络连接的本身的传输的问题，我们在接收8台Femto Mega的数据流的时候会导致掉帧，从而影响动态场景的显示。
-###
+### 
