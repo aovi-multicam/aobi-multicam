@@ -36,10 +36,10 @@
 |千兆网线||2条|交换机和采集主机的连线|
 
 ## 方案框图
-![connectiondiagram](\picture\connectiondiagram.png)
+![connectiondiagram.png](https://s2.loli.net/2024/07/26/G9Ji7DQnt5kZsFl.png)
 
 实际环境图：
-![praticaldiagram](picture\IMG_7320.HEIC)
+![surroundings.jpg](https://s2.loli.net/2024/07/26/mIQApesHEdwoYqD.jpg)
 ## 首次设置
 本节将介绍使用FemtoMega相机的首次设置：
 
@@ -69,33 +69,35 @@ Anaconda可以创建虚拟环境达成。打开anaconda prompt，输入命令​
 3. 安装依赖：进入sdk，在命令行输入```pip install -r.\requirements.txt```
 4. 在Cmake中build整个工程：
 在Vscode中下载Cmake插件，安装完成后右键CmakeLists,txt 就可以去 build all Projects
-![pcrequire1](\picture\PCrequirements\pcrequire1.png)
+![pcrequire1.png](https://s2.loli.net/2024/07/26/kPKr8452UTDdWZn.png)
 5. 重新编译整个pyorbbecSDK
 如果遇到下列情况一般是 Pybind11 的位置没有找到，在 CmakeList.txt 中加入即可
-![pcrequire2](\picture\PCrequirements\pcrequire2.png)![pcrequire3](\picture\PCrequirements\pcrequire3.png)
-在下图文件夹中用 Vscode 打开 pyorbbecsdk.sln!![pcrequire4](\picture\PCrequirements\pcrequire4.png)
-点击INSTALL，生成![pcrequire5](\picture\PCrequirements\pcrequire5.png)
+![pcrequire2.png](https://s2.loli.net/2024/07/26/2cCIbtsJQom5ApD.png)
+![pcrequire3.png](https://s2.loli.net/2024/07/26/HOxM6vC5fuKAcdh.png)
+在下图文件夹中用 Vscode 打开 pyorbbecsdk.sln!
+![pcrequire4.png](https://s2.loli.net/2024/07/26/G9kKBuF8hx6Mrgs.png)
+点击INSTALL，生成![pcrequire5.png](https://s2.loli.net/2024/07/26/HUKz7iqMhSTItsr.png)
 将在 install/lib/ 中生成四个库文件
-![pcrequire6](\picture\PCrequirements\pcrequire6.png)
+![pcrequire6.png](https://s2.loli.net/2024/07/26/MdPEA73xfjmiVtO.png)
 6. 将install文件夹的动态库加入工程目录（也可尝试放入examples文件夹中），接入 OrbbecSDK 的深度相机运行 depth_viewer.py ，结果如下图，即可认为环境配置成功。
-![pcrequire7](\picture\PCrequirements\pcrequire7.png)
+![pcrequire7.png](https://s2.loli.net/2024/07/26/YCOds1LTvrSh5WF.png)
 
 ## FemtoMega组网
 本节将介绍FemtoMega组网过程，步骤如下：
 
 1. 确认采集电脑是否处于同一以太网内。若不是，需对采集电脑进行手动IP设置。
-![ipsetup1](\picture\ipnet\net3.png)
+![net3.png](https://s2.loli.net/2024/07/26/Oi765t8cxLrMaqZ.png)
 2. 连接 Femto Mega ：将 Femto Mega 网线接到有POE的设备上，通过网线供电和传输数据。
 3. 检查是否连接成功：打开**最新版OrbeecViewer**，若出现如下信息时，即为连接成功。
-![ipsetup2](\picture\ipnet\net1.png)
+![net1.png](https://s2.loli.net/2024/07/26/XBzUG6cPeW7TtIx.png)
 4. 更改相机IP：在OrbbecViewer——相机控制——IP配置中，对Mega的网络IP进行手动控制。
-![ipsetup3](\picture\ipnet\net2.png)
+![net2.png](https://s2.loli.net/2024/07/26/muE5A871XWyTqNz.png)
 
 ## 多相机同步
 本节将介绍多相机同步步骤：
 ### 相机配置文件
 在SDK文件中程序文件内：\pyorbbecsdk\pyorbbecsdk\config，找到配置文件："multi_device_sync_config.json"，按照下图进行配置，配置完成进行保存。
-![jsonsetup](\picture\multisync\jsonsetup.png)
+![jsonsetup.png](https://s2.loli.net/2024/07/26/Zl529ABaksvTcKo.png)
 ### 连接设备
 在**星型配置**中连接 Femto Mega 设备：
 1. 将每台Femto Mega 连接到电源。
@@ -107,15 +109,15 @@ Anaconda可以创建虚拟环境达成。打开anaconda prompt，输入命令​
 ### 运行多机同步
 1. 在 Vscode 中打开 eight_net_devices_sync.py 程序，点击运行。
 2. 开流成功后预览多机效果图如下：
-![multidevice_effect_sketch](\picture\multisync\multidevice_effect_sketch.png)
+![multidevice_effect_sketch.png](https://s2.loli.net/2024/07/26/8R3PC5J1oMrmSwO.png)
 3. 验证多机同步：观察时间戳（当多机时间戳基本相同时即可证明多机同步）
-![multidevice_effect_sketch](\picture\multisync\timestamp.png)
+![timestamp.png](https://s2.loli.net/2024/07/26/oXdnkchUsg5VOCS.png)
 ## 相机标定
 本节将介绍张正友标定法对相机外参,与 Matlab 工具箱对相机内外参进行标定：
 ### 张正友标定法
 1. 对单相机进行标定，得到两个相机的外参。
 2. 对两组外参通过世界坐标系转换，从而将两个相机的像素坐标行进行转换，最终得到两个相机之间的坐标系转换。
-![connect_principle](\picture\pointcloud_connect\pcc1.png)
+![pcc1.png](https://s2.loli.net/2024/07/26/A3uR9UgcmbISrOP.png)
 由于本方案中使用的相机均为 Femto Mega ，因此方案中将相机内参近似相同。
 ### Matlab Computer vision toolbox
 1. 在 Matlab中下载 Computer vision toolbox。
@@ -140,17 +142,17 @@ Anaconda可以创建虚拟环境达成。打开anaconda prompt，输入命令​
 **A:** 命令行需要单独开代理```set http_proxy=http://127.0.0.1:7890 & set https_proxy=http://127.0.0.1:7890```，命令行可参考以上命令进行设置，其中7890为采集电脑的代理端口号
 
 **Q:** 当使用 viewer 开启视频时设备闪烁黄灯且无法打开视频
-![Wrongcondition](\picture\QandA\Q1.png)
+![Q1.png](https://s2.loli.net/2024/07/26/B9zkeyLMHctvbRW.png)
 
 **A:** 同步时该设备被设置为从机，在 viewer 中修改为主机即可正常使用
 
 **Q:** 运行 K4A_SDK 中的 green_screen 的双机模式时报错没有同步
-![multimodenotsync](\picture\QandA\Q2.png)
+![Q2.png](https://s2.loli.net/2024/07/26/4RDPTuMp8xrFylN.png)
 
 **A:** 在 viewer 中设置主从机即可
 
 **Q:** 程序报错，显示缺少 DDL 文件
-![lackofddl](\picture\QandA\Q3.png)
+![Q3.png](https://s2.loli.net/2024/07/26/phzwrYVys4ZtKul.png)
 
 **A:** 可在文件编辑器中搜索相关文件并添加到目录中即可
 
@@ -161,6 +163,10 @@ Anaconda可以创建虚拟环境达成。打开anaconda prompt，输入命令​
 **Q:** 手动配置网络后出现连接失败
 
 **A:** 在同一网络中，多台电脑设置了同一 IP
+
+**Q:** Viewer 无法打开相机
+
+**A:** 检测相机是 openNI2 还是 UVC ，不同版本的 Viewer 的驱动不通用，同时需检查驱动是否安装
 
 ## 遇到问题
 本节将介绍在Femto Mega多相机同步采集中所遇到的问题：
